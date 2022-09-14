@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        const searchParams = window.location.search;
+        const searchObject = new URLSearchParams(searchParams)
+        const q = searchObject.get("q");
+        window.document.title = `${q.toUpperCase()} - SVG Course`;
+    </script>
+    <title>SVG Course</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="d-flex">
+        <h2 id="heading" style="margin-right: 20px;"></h2>
+        <a href="index.html">&lt;&lt; Go back</a>
+    </div>
+    <div style="margin-top: 50px; min-height: 400px;">
+       <iframe src=""></iframe>
+    </div>
+    <script>
+        document.getElementById('heading').textContent = q.toUpperCase()
+        document.querySelector("iframe").src=`${q}.html`
+    </script>
+</body>
+</html>
